@@ -1,5 +1,6 @@
 <?php
-abstract class MobilePhone
+
+abstract class Phone
 {
     protected string $brand;
     protected string $name;
@@ -17,7 +18,7 @@ abstract class MobilePhone
     abstract public function getBrandInfo(): string;
     public function getPhoneInfo(): string
     {
-        return "{$this->brand} {$this->name} with price Rp{$this->price} has {$this->stock} stock";
+        return "{$this->brand} {$this->name} with price Rp{$this->price} has {$this->stock} stock\n";
     }
 
     public function getStock(): int

@@ -1,7 +1,8 @@
 <?php
-include "./Phone.php";
 
-class Samsung extends MobilePhone
+require "Phone.php";
+
+class Samsung extends Phone
 {
     public function __construct($name, $price, $stock)
     {
@@ -15,7 +16,7 @@ class Samsung extends MobilePhone
     }
 }
 
-class Redmi extends MobilePhone
+class Redmi extends Phone
 {
     public function __construct($name, $price, $stock)
     {
@@ -29,7 +30,7 @@ class Redmi extends MobilePhone
     }
 }
 
-class Iphone extends MobilePhone
+class Iphone extends Phone
 {
     public function __construct($name, $price, $stock)
     {

@@ -1,8 +1,5 @@
 <?php
 
-include "./Brand.php";
-include "./Phone.php";
-
 class Inventaris
 {
     private $listPhone = array();
@@ -16,23 +13,23 @@ class Inventaris
     {
         $idx = 0;
         foreach ($this->listPhone as $phone) {
-            echo "index : {$idx}";
+            echo "index : {$idx} -> ";
             echo $phone->getPhoneInfo();
             $idx++;
         }
     }
 
-    public function addPhone(MobilePhone $phone): void
+    public function addPhone(Phone $phone): void
     {
-        array_push($listPhone, $phone);
-        echo "Done add phone to Phone List";
+        array_push($this->listPhone, $phone);
+        echo "Done add phone to Phone List\n";
     }
 
     public function removePhone(int $index): void
     {
         if ($index < count($this->listPhone) && $index >= 0) {
-            unset($listPhone[$index]);
-            echo "Done remove phone from Phone List";
+            unset($this->listPhone[$index]);
+            echo "Done remove phone from Phone List\n";
         } else {
             echo "Phone not found";
         }
@@ -44,7 +41,7 @@ class Inventaris
             $this->listPhone[$index]->setName($nama);
             $this->listPhone[$index]->setPrice($harga);
             $this->listPhone[$index]->setStock($stock);
-            echo "Done update phone from Phone List";
+            echo "Done update phone from Phone List\n";
         } else {
             echo "Phone not found";
         }
